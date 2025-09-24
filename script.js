@@ -54,7 +54,11 @@ function renderizarContas() {
         let conta = contas[i];
         let tr = document.createElement("tr");
 
-        tr.className = conta.status === "pago" ? "pago" : "pendente";
+        if (conta.status === "pago") {
+            tr.className = "pago";
+        }else {
+            tr.className = "pendente"
+        }
 
         tr.innerHTML = `
             <td>${conta.nome}</td>
