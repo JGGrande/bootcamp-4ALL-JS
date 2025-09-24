@@ -55,7 +55,7 @@ function renderizarContas() {
         let tr = document.createElement("tr");
 
         if (conta.status === "pago") {
-            tr.className = "pago";
+            tr.className = "pago"
         }else {
             tr.className = "pendente"
         }
