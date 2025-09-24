@@ -50,14 +50,11 @@ function atualizarTotais() {
 function renderizarContas() {
     lista.innerHTML = ""
 
-    for (let [index, conta] of contas.entries()) {
-        let tr = document.createElement("tr")
+    for (let i = 0; i < contas.length; i++) {
+        let conta = contas[i];
+        let tr = document.createElement("tr");
 
-        if (conta.status === "pago") {
-            tr.className = "pago";
-        } else {
-            tr.className = "pendente";
-        }
+        tr.className = conta.status === "pago" ? "pago" : "pendente";
 
         tr.innerHTML = `
             <td>${conta.nome}</td>
@@ -67,12 +64,12 @@ function renderizarContas() {
             <td>${conta.status}</td>
             <td>${conta.categoria}</td>
             <td>
-            <button onclick="editarConta(${index})">Editar</button>
-            <button onclick="excluirConta(${index})">Excluir</button>
+                <button onclick="editarConta(${i})">Editar</button>
+                <button onclick="excluirConta(${i})">Excluir</button>
             </td>
-        `
+        `;
 
-        lista.appendChild(tr)
+        lista.appendChild(tr);
     }
 
     localStorage.setItem("contas", JSON.stringify(contas))
