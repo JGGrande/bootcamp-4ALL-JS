@@ -5,89 +5,100 @@
     <meta charset="UTF-8">
     <title>Tá Pago!</title>
     <style>
+        /* Define fonte padrão, margens e cor de fundo da página */
         body {
-            font-family: Arial;
-            margin: 20px;
-            background: #f4f6f9;
-            color: #333;
+            font-family: Arial; /* Define a fonte do texto */
+            margin: 20px; /* Espaçamento externo da página */
+            background: #f4f6f9; /* Cor de fundo da página */
+            color: #333; /* Cor do texto */
         }
 
+        /* Estiliza o título principal */
         h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 20px;
+            text-align: center; /* Centraliza o texto */
+            color: #2c3e50; /* Cor do texto */
+            margin-bottom: 20px; /* Espaço abaixo do título */
         }
 
+        /* Centraliza e limita largura do formulário e tabela */
         form,
         table {
-            margin: 20px auto;
-            width: 80%;
-            max-width: 900px;
+            margin: 20px auto; /* Espaço externo e centralização */
+            width: 80%; /* Largura relativa à página */
+            max-width: 900px; /* Largura máxima */
         }
 
+        /* Estiliza campos de entrada, seleção e botões */
         input,
         select,
         button {
-            margin: 5px;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 14px;
+            margin: 5px; /* Espaço externo entre elementos */
+            padding: 10px; /* Espaço interno */
+            border-radius: 8px; /* Bordas arredondadas */
+            border: 1px solid #ccc; /* Cor e espessura da borda */
+            font-size: 14px; /* Tamanho da fonte */
         }
 
+        /* Estiliza a tabela de contas */
         table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Tabela ocupa toda a largura do container */
+            border-collapse: collapse; /* Remove espaçamento entre células */
+            margin-top: 20px; /* Espaço acima da tabela */
+            background: white; /* Fundo branco */
+            border-radius: 10px; /* Bordas arredondadas */
+            overflow: hidden; /* Esconde conteúdo que ultrapassa borda */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
         }
 
+        /* Estiliza cabeçalho da tabela */
         th {
-            background: #3498db;
-            color: white;
-            padding: 12px;
-            text-transform: uppercase;
-            font-size: 13px;
+            background: #3498db; /* Fundo azul */
+            color: white; /* Texto branco */
+            padding: 12px; /* Espaço interno */
+            text-transform: uppercase; /* Letras maiúsculas */
+            font-size: 13px; /* Tamanho da fonte */
         }
 
+        /* Estiliza células da tabela */
         td {
-            padding: 10px;
-            border-bottom: 1px solid #eee;
+            padding: 10px; /* Espaço interno */
+            border-bottom: 1px solid #eee; /* Linha divisória inferior */
         }
 
-
+        /* Destaca linhas de contas pagas */
         .pago {
-            background: #c8f7c5;
+            background: #c8f7c5; /* Fundo verde claro */
         }
 
+        /* Destaca linhas de contas pendentes */
         .pendente {
-            background: #f9c0c0;
+            background: #f9c0c0; /* Fundo vermelho claro */
         }
 
+        /* Estiliza botões */
         button {
-            background: #3498db;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
+            background: #3498db; /* Fundo azul */
+            color: white; /* Texto branco */
+            border: none; /* Remove borda padrão */
+            cursor: pointer; /* Cursor de mão ao passar */
+            transition: 0.3s; /* Transição suave para efeitos */
         }
 
+        /* Estiliza o resumo de totais */
         #totais {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 10px;
-            background: #fff;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-            font-weight: bold;
-            text-align: center;
-            color: #2c3e50;
+            margin-top: 20px; /* Espaço acima do resumo */
+            padding: 15px; /* Espaço interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            background: #fff; /* Fundo branco */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Sombra suave */
+            font-weight: bold; /* Texto em negrito */
+            text-align: center; /* Centraliza texto */
+            color: #2c3e50; /* Cor do texto */
         }
 
+        /* Ajusta espaçamento dos parágrafos do resumo */
         #totais p {
-            margin: 8px 0;
+            margin: 8px 0; /* Espaço acima e abaixo dos parágrafos */
         }
     </style>
 </head>
