@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tá Pago!</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        form,
+        table {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        input,
+        select,
+        button {
+            margin: 5px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .pago {
+            background: #c8f7c5;
+        }
+
+        .pendente {
+            background: #f9c0c0;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #totais {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            font-weight: bold;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        #totais p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>💰 Tá Pago!</h1>
+
+    <form id="form-conta">
+        <input type="text" id="nome" placeholder="Nome da conta" required>
+        <input type="text" id="descricao" placeholder="Descrição">
+        <input type="date" id="vencimento" required>
+        <input type="text" id="valor" placeholder="Valor (R$)" required>
+        <select id="status">
+            <option value="pendente">Pendente</option>
+            <option value="pago">Pago</option>
+        </select>
+        <input type="text" id="categoria" placeholder="Categoria">
+        <button type="submit">Salvar</button>
+        <button type="button" id="limpar">Limpar</button>
+    </form>
+
+    <div id="totais">
+        <h3>Resumo</h3>
+        <p id="total-pagas">✅ Contas Pagas: 0 (R$ 0,00)</p>
+        <p id="total-pendentes">⚠️ Contas Pendentes: 0 (R$ 0,00)</p>
+        <button id="exportar">📂 Exportar CSV</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Vencimento</th>
+                <th>Valor</th>
+                <th>Status</th>
+                <th>Categoria</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="lista-contas"></tbody>
+    </table>
+
+    <script src="https://unpkg.com/vanilla-masker/build/vanilla-masker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
